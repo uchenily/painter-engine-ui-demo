@@ -23,3 +23,21 @@ hello_lib = library('hello',
 #  fallback: ['hello', 'hello_dep'],
 #  default_options: ['default_library=static'])
 
+# src下定义了hello_lib, 用于下面的链接
+# 可以根据meson_options.txt中定义的选项compile_library来判断是否需要编译成库
+# if get_option('compile_library')
+#   ...
+# else
+#   ...
+# endif
+#
+# 在default_options中定义选项值: default_options: ['compile_library=true']
+
+# 内部声明一个依赖(链接为static/shared库)
+hello_dep = declare_dependency(
+  include_directories: includes,
+  dependencies: hello_dependencies,
+  link_with: hello_lib,
+  compile_args: hello_compile_args)
+
+hello_dependencies += hello_dep
