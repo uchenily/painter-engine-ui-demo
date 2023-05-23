@@ -20,6 +20,7 @@ SpaceAfterCStyleCast: true
 Standard: Cpp11
 StatementMacros: ['PyObject_HEAD']
 TabWidth: 4
+IncludeCategories:
   - Regex:           '^".*/?detail/'
     Priority:        1
     SortPriority:    2
