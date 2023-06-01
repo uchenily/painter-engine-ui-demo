@@ -5,6 +5,7 @@
 ```shell
 brew install freeglut
 brew install --cask xquartz
+export DISPLAY=:0
 ```
 
 需要启动xquartz服务. 否则会出现错误: freeglut failed to open display
