@@ -70,7 +70,6 @@ tmp
 *.svg
 perf/
 perf.data*
-*.data
 *.perf
 *.folded
 palette.map
