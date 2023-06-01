@@ -81,3 +81,5 @@ public/
 # meson
 subprojects/*
 !subprojects/*.wrap
+
+temp

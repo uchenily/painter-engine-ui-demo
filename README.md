@@ -1,2 +1,7 @@
-C++ 项目模板.
-使用meson+ninja作为构建系统.
+参考资料:
+
+https://github.com/matrixcascade/PainterEngine
+
+https://www.zhihu.com/question/587721560/answer/3053891651
+
+https://www.painterengine.com/main/instances/instance2023053101/index.html
