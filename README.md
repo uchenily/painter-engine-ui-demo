@@ -50,3 +50,17 @@ make
 参考资料:
 
 https://www.painterengine.com/main/instances/instance2023053101/project.zip
+
+
+## fox-jump
+
+编译步骤:
+
+```shell
+cd fox-jump/platform/webassembly
+make -j`nproc`
+```
+
+参考资料:
+
+https://www.painterengine.com/main/instances/instance2021070501/project.zip
