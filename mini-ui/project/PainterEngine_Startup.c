@@ -87,22 +87,6 @@ PX_LoadShapeFromFile(px_memorypool *mp, px_shape *shape, const px_char path[]) {
     return PX_FALSE;
 }
 
-px_bool PX_LoadAnimationLibraryFromFile(px_memorypool *mp,
-                                        PX_AnimationLibrary *lib,
-                                        const px_char path[]) {
-    PX_IO_Data io;
-    io = PX_LoadFileToIOData(path);
-    if (!io.size) {
-        return PX_FALSE;
-    }
-    if (PX_AnimationLibraryCreateFromMemory(mp, lib, io.buffer, io.size)) {
-        PX_FreeIOData(&io);
-        return PX_TRUE;
-    }
-    PX_FreeIOData(&io);
-    return PX_FALSE;
-}
-
 px_bool PX_LoadScriptFromFile(px_memory *code, const px_char path[]) {
     PX_IO_Data io = PX_LoadFileToIOData(path);
     if (!io.size) {
@@ -194,26 +178,6 @@ px_bool PX_LoadShapeToResource(PX_ResourceLibrary *ResourceLibrary,
         goto _ERROR;
     if (!PX_ResourceLibraryLoad(
             ResourceLibrary, PX_RESOURCE_TYPE_SHAPE, io.buffer, io.size, key))
-        goto _ERROR;
-    PX_FreeIOData(&io);
-    return PX_TRUE;
-_ERROR:
-    PX_FreeIOData(&io);
-    return PX_FALSE;
-}
-
-px_bool PX_LoadAnimationToResource(PX_ResourceLibrary *ResourceLibrary,
-                                   const px_char Path[],
-                                   const px_char key[]) {
-    PX_IO_Data io;
-    io = PX_LoadFileToIOData(Path);
-    if (!io.size)
-        goto _ERROR;
-    if (!PX_ResourceLibraryLoad(ResourceLibrary,
-                                PX_RESOURCE_TYPE_ANIMATIONLIBRARY,
-                                io.buffer,
-                                io.size,
-                                key))
         goto _ERROR;
     PX_FreeIOData(&io);
     return PX_TRUE;

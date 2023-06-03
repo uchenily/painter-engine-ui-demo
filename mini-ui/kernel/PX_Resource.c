@@ -44,11 +44,6 @@ px_bool PX_ResourceLibraryLoad(PX_ResourceLibrary *lib,
             if (!PX_VMInitialize(&res.Script, lib->mp, data, datasize))
                 return PX_FALSE;
             break;
-        case PX_RESOURCE_TYPE_ANIMATIONLIBRARY:
-            if (!PX_AnimationLibraryCreateFromMemory(
-                    lib->mp, &res.animationlibrary, data, datasize))
-                return PX_FALSE;
-            break;
         case PX_RESOURCE_TYPE_DATA:
             PX_MemoryInitialize(lib->mp, &res.data);
             if (!PX_MemoryCat(&res.data, data, datasize)) {
@@ -91,9 +86,6 @@ px_void PX_ResourceLibraryFree(PX_ResourceLibrary *lib) {
                 break;
             case PX_RESOURCE_TYPE_SCRIPT:
                 PX_VMFree(&pres->Script);
-                break;
-            case PX_RESOURCE_TYPE_ANIMATIONLIBRARY:
-                PX_AnimationLibraryFree(&pres->animationlibrary);
                 break;
             case PX_RESOURCE_TYPE_DATA:
                 PX_MemoryFree(&pres->data);
@@ -145,9 +137,6 @@ px_void PX_ResourceLibraryDelete(PX_ResourceLibrary *lib, const px_char key[]) {
                     case PX_RESOURCE_TYPE_SCRIPT:
                         PX_VMFree(&pres->Script);
                         break;
-                    case PX_RESOURCE_TYPE_ANIMATIONLIBRARY:
-                        PX_AnimationLibraryFree(&pres->animationlibrary);
-                        break;
                     case PX_RESOURCE_TYPE_DATA:
                         PX_MemoryFree(&pres->data);
                         break;
@@ -187,16 +176,6 @@ px_string *PX_ResourceLibraryGetString(PX_ResourceLibrary *lib,
     PX_Resource *pres = PX_ResourceLibraryGet(lib, key);
     if (pres && pres->Type == PX_RESOURCE_TYPE_STRING) {
         return &pres->stringdata;
-    }
-    return PX_NULL;
-}
-
-PX_AnimationLibrary *
-PX_ResourceLibraryGetAnimationLibrary(PX_ResourceLibrary *lib,
-                                      const px_char key[]) {
-    PX_Resource *pres = PX_ResourceLibraryGet(lib, key);
-    if (pres && pres->Type == PX_RESOURCE_TYPE_ANIMATIONLIBRARY) {
-        return &pres->animationlibrary;
     }
     return PX_NULL;
 }

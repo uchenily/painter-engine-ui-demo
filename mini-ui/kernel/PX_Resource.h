@@ -2,7 +2,6 @@
 #define PX_RESOURCE_H
 
 #include "../core/PX_Core.h"
-#include "PX_Animation.h"
 #include "PX_Partical.h"
 #include "PX_Script_ASMCompiler.h"
 #include "PX_Script_Interpreter.h"
@@ -10,7 +9,6 @@
 
 typedef enum {
     PX_RESOURCE_TYPE_NULL,
-    PX_RESOURCE_TYPE_ANIMATIONLIBRARY,
     PX_RESOURCE_TYPE_SCRIPT,
     PX_RESOURCE_TYPE_STRING,
     PX_RESOURCE_TYPE_TEXTURE,
@@ -23,7 +21,6 @@ typedef struct {
     union {
         px_texture texture;
         px_shape shape;
-        PX_AnimationLibrary animationlibrary;
         PX_VM Script;
         px_string stringdata;
         px_memory data;
@@ -55,9 +52,6 @@ px_texture *PX_ResourceLibraryGetTexture(PX_ResourceLibrary *lib,
                                          const px_char key[]);
 px_shape *PX_ResourceLibraryGetShape(PX_ResourceLibrary *lib,
                                      const px_char key[]);
-PX_AnimationLibrary *
-PX_ResourceLibraryGetAnimationLibrary(PX_ResourceLibrary *lib,
-                                      const px_char key[]);
 PX_VM *PX_ResourceLibraryGetScript(PX_ResourceLibrary *lib,
                                    const px_char key[]);
 px_memory *PX_ResourceLibraryGetData(PX_ResourceLibrary *lib,

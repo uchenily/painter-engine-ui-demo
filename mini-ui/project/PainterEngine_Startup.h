@@ -29,9 +29,6 @@ px_bool
 PX_LoadStringFromFile(px_memorypool *mp, px_string *str, const px_char path[]);
 px_bool
 PX_LoadShapeFromFile(px_memorypool *mp, px_shape *shape, const px_char path[]);
-px_bool PX_LoadAnimationLibraryFromFile(px_memorypool *mp,
-                                        PX_AnimationLibrary *lib,
-                                        const px_char path[]);
 px_bool PX_LoadScriptFromFile(px_memory *code, const px_char path[]);
 px_bool PX_LoadScriptInstanceFromFile(px_memorypool *mp,
                                       PX_VM *ins,
@@ -47,9 +44,6 @@ px_bool PX_LoadTextureToResource(PX_ResourceLibrary *presourcelib,
 px_bool PX_LoadShapeToResource(PX_ResourceLibrary *presourcelib,
                                const px_char Path[],
                                const px_char key[]);
-px_bool PX_LoadAnimationToResource(PX_ResourceLibrary *presourcelib,
-                                   const px_char Path[],
-                                   const px_char key[]);
 px_bool PX_LoadStringToResource(PX_ResourceLibrary *ResourceLibrary,
                                 const px_char Path[],
                                 const px_char key[]);

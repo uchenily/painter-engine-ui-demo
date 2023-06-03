@@ -2,7 +2,6 @@
 #define PIXELSES_OBJECT_H
 
 #include "../core/PX_Core.h"
-#include "PX_Animation.h"
 #include "PX_Partical.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -54,7 +53,6 @@ enum PX_OBJECT_TYPE {
     PX_OBJECT_TYPE_EDIT,
     PX_OBJECT_TYPE_SCROLLAREA,
     PX_OBJECT_TYPE_AUTOTEXT,
-    PX_OBJECT_TYPE_ANIMATION,
     PX_OBJECT_TYPE_CURSORBUTTON,
     PX_OBJECT_TYPE_VKEYBOARD,
     PX_OBJECT_TYPE_VNKEYBOARD,
@@ -210,11 +208,6 @@ struct _PX_Object {
 //////////////////////////////////////////////////////////////////////////
 ///   Controllers
 //////////////////////////////////////////////////////////////////////////
-
-typedef struct {
-    PX_ALIGN Align;
-    PX_Animation animation;
-} PX_Object_Animation;
 
 typedef struct {
     px_shape *shape;
@@ -478,10 +471,6 @@ px_void PX_Designer_SetEnable(PX_Object *pObject, px_bool v);
 // AutoText
 //////////////////////////////////////////////////////////////////////////
 #include "PX_Object_AutoText.h"
-
-//////////////////////////////////////////////////////////////////////////
-// Animation
-#include "PX_Object_Animation.h"
 
 //////////////////////////////////////////////////////////////////////////
 // CursorButton

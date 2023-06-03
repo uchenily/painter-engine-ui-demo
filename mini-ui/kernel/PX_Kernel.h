@@ -9,7 +9,6 @@
 //////////////////////////////////////////////////////////////////////////
 #ifndef _PX_KERNEL_H
 #define _PX_KERNEL_H
-#include "PX_Animation.h"
 #include "PX_CanvasVM.h"
 #include "PX_Compiler.h"
 #include "PX_Json.h"
