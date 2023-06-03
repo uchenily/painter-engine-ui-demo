@@ -40,9 +40,6 @@ px_bool PX_LoadScriptFromFile(px_memory *code, const px_char path[]);
 px_bool PX_LoadScriptInstanceFromFile(px_memorypool *mp,
                                       PX_VM *ins,
                                       const px_char path[]);
-px_bool PX_LoadLiveFromFile(px_memorypool *mp,
-                            PX_LiveFramework *pliveframework,
-                            const px_char path[]);
 px_bool PX_LoadUIFormFile(px_memorypool *mp,
                           PX_Object *proot,
                           PX_FontModule *fm,
