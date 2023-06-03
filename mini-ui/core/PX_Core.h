@@ -27,8 +27,6 @@
 #include "PX_Png.h"
 #include "PX_Quadtree.h"
 #include "PX_Quicksort.h"
-#include "PX_Sha1.h"
-#include "PX_Sha256.h"
 #include "PX_Sound.h"
 #include "PX_String.h"
 #include "PX_Texture.h"
