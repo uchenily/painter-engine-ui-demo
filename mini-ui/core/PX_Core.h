@@ -12,7 +12,6 @@
 #define __PX_CORE_H
 #include "PX_Base64.h"
 #include "PX_BaseGeo.h"
-#include "PX_Effect.h"
 #include "PX_Font.h"
 #include "PX_Hashmap.h"
 #include "PX_Huffman.h"
