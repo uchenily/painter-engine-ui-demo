@@ -29,7 +29,6 @@ px_bool
 PX_LoadStringFromFile(px_memorypool *mp, px_string *str, const px_char path[]);
 px_bool
 PX_LoadShapeFromFile(px_memorypool *mp, px_shape *shape, const px_char path[]);
-px_bool PX_LoadMidiFromFile(PX_Midi *midi, const px_char path[]);
 px_bool PX_LoadAnimationLibraryFromFile(px_memorypool *mp,
                                         PX_AnimationLibrary *lib,
                                         const px_char path[]);
