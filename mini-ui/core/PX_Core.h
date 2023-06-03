@@ -10,7 +10,6 @@
 
 #ifndef __PX_CORE_H
 #define __PX_CORE_H
-#include "PX_ANN.h"
 #include "PX_Arle.h"
 #include "PX_Base64.h"
 #include "PX_BaseGeo.h"
