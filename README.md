@@ -64,3 +64,23 @@ make -j`nproc`
 参考资料:
 
 https://www.painterengine.com/main/instances/instance2021070501/project.zip
+
+## memory-debugger
+
+编译步骤:
+
+```shell
+# makefile
+cd fox-jump/platform/webassembly
+make -j`nproc`
+
+# meson
+cd memory-debugger
+meson setup --reconfigure build --cross-file meson-cross.ini
+cp platform/webassembly/assets -r build
+meson compile -C build
+```
+
+参考资料:
+
+https://www.painterengine.com/main/instances/instance2021111901/project.zip
