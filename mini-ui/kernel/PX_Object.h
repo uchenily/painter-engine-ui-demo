@@ -72,9 +72,7 @@ enum PX_OBJECT_TYPE {
     PX_OBJECT_TYPE_PANC,
     PX_OBJECT_TYPE_DESIGNERBOX,
     PX_OBJECT_TYPE_JOYSTICK,
-    PX_OBJECT_TYPE_MEMORYVIEW,
     PX_OBJECT_TYPE_VARIOUS,
-    PX_OBJECT_TYPE_IPBOX,
     PX_OBJECT_TYPE_VARBOX,
     PX_OBJECT_TYPE_MODBUSVARBOX,
     PX_OBJECT_TYPE_COMBOX,
@@ -547,16 +545,8 @@ px_void PX_Designer_SetEnable(PX_Object *pObject, px_bool v);
 #include "PX_Object_RingProcessbar.h"
 
 //////////////////////////////////////////////////////////////////////////
-// memoryview
-#include "PX_Object_MemoryView.h"
-
-//////////////////////////////////////////////////////////////////////////
 // various
 #include "PX_Object_Various.h"
-
-//////////////////////////////////////////////////////////////////////////
-// ipbox
-#include "PX_Object_IPBox.h"
 
 //////////////////////////////////////////////////////////////////////////
 // varbox
