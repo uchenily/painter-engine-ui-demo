@@ -29,9 +29,6 @@ px_bool
 PX_LoadStringFromFile(px_memorypool *mp, px_string *str, const px_char path[]);
 px_bool
 PX_LoadShapeFromFile(px_memorypool *mp, px_shape *shape, const px_char path[]);
-px_bool PX_LoadSoundFromFile(px_memorypool *mp,
-                             PX_SoundData *sounddata,
-                             const px_char path[]);
 px_bool PX_LoadMidiFromFile(PX_Midi *midi, const px_char path[]);
 px_bool PX_LoadAnimationLibraryFromFile(px_memorypool *mp,
                                         PX_AnimationLibrary *lib,
@@ -60,9 +57,6 @@ px_bool PX_LoadStringToResource(PX_ResourceLibrary *ResourceLibrary,
 px_bool PX_LoadScriptToResource(PX_ResourceLibrary *presourcelib,
                                 const px_char Path[],
                                 const px_char key[]);
-px_bool PX_LoadSoundToResource(PX_ResourceLibrary *presourcelib,
-                               const px_char Path[],
-                               const px_char key[]);
 px_bool PX_LoadFontModuleFromFile(PX_FontModule *fm, const px_char Path[]);
 px_bool PX_LoadJsonFromFile(PX_Json *json, const px_char *path);
 #endif

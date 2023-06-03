@@ -87,63 +87,6 @@ PX_LoadShapeFromFile(px_memorypool *mp, px_shape *shape, const px_char path[]) {
     return PX_FALSE;
 }
 
-px_bool PX_LoadSoundFromFile(px_memorypool *mp,
-                             PX_SoundData *sounddata,
-                             const px_char path[]) {
-    PX_IO_Data io = PX_LoadFileToIOData(path);
-    if (!io.size) {
-        return PX_FALSE;
-    }
-    if (PX_WaveVerify(io.buffer, io.size)) {
-        px_uint offset = 0, pcmSize, woffset;
-        pcmSize = PX_WaveGetPCMSize(io.buffer, io.size);
-
-        if (pcmSize != 0) {
-            PX_WAVE_DATA_BLOCK *pBlock;
-            PX_WAVE_RIFF_HEADER *pHeader = (PX_WAVE_RIFF_HEADER *) io.buffer;
-            PX_WAVE_FMT_BLOCK *pfmt_block;
-            sounddata->mp = mp;
-            sounddata->buffer = (px_byte *) MP_Malloc(mp, pcmSize);
-            sounddata->size = pcmSize;
-            sounddata->channel = PX_WaveGetChannel(io.buffer, pcmSize) == 1
-                                     ? PX_SOUND_CHANNEL_ONE
-                                     : PX_SOUND_CHANNEL_DOUBLE;
-            if (!sounddata->buffer) {
-                return PX_FALSE;
-            }
-            pfmt_block = (PX_WAVE_FMT_BLOCK *) (io.buffer
-                                                + sizeof(PX_WAVE_RIFF_HEADER));
-            offset += sizeof(PX_WAVE_RIFF_HEADER);
-            offset += 8;
-            offset += pfmt_block->dwFmtSize;
-
-            pcmSize = 0;
-            woffset = 0;
-            while (offset < io.size) {
-                pBlock = (PX_WAVE_DATA_BLOCK *) (io.buffer + offset);
-                if (!PX_memequ(pBlock->szDataID, "data", 4)) {
-                    offset += pBlock->dwDataSize + sizeof(PX_WAVE_DATA_BLOCK);
-                    continue;
-                }
-                offset += sizeof(PX_WAVE_DATA_BLOCK);
-                PX_memcpy(sounddata->buffer + woffset,
-                          io.buffer + offset,
-                          pBlock->dwDataSize);
-                offset += pBlock->dwDataSize;
-                woffset += pBlock->dwDataSize;
-            }
-        } else {
-            PX_FreeIOData(&io);
-            return PX_FALSE;
-        }
-    } else {
-        PX_FreeIOData(&io);
-        return PX_FALSE;
-    }
-    PX_FreeIOData(&io);
-    return PX_TRUE;
-}
-
 px_bool PX_LoadMidiFromFile(PX_Midi *midi, const px_char path[]) {
     PX_IO_Data io = PX_LoadFileToIOData(path);
     if (!io.size) {
@@ -301,23 +244,6 @@ px_bool PX_LoadScriptToResource(PX_ResourceLibrary *ResourceLibrary,
         goto _ERROR;
     if (!PX_ResourceLibraryLoad(
             ResourceLibrary, PX_RESOURCE_TYPE_SCRIPT, io.buffer, io.size, key))
-        goto _ERROR;
-    PX_FreeIOData(&io);
-    return PX_TRUE;
-_ERROR:
-    PX_FreeIOData(&io);
-    return PX_FALSE;
-}
-
-px_bool PX_LoadSoundToResource(PX_ResourceLibrary *ResourceLibrary,
-                               const px_char Path[],
-                               const px_char key[]) {
-    PX_IO_Data io;
-    io = PX_LoadFileToIOData(Path);
-    if (!io.size)
-        goto _ERROR;
-    if (!PX_ResourceLibraryLoad(
-            ResourceLibrary, PX_RESOURCE_TYPE_SOUND, io.buffer, io.size, key))
         goto _ERROR;
     PX_FreeIOData(&io);
     return PX_TRUE;

@@ -27,10 +27,8 @@
 #include "PX_Png.h"
 #include "PX_Quadtree.h"
 #include "PX_Quicksort.h"
-#include "PX_Sound.h"
 #include "PX_String.h"
 #include "PX_Texture.h"
 #include "PX_Tuning.h"
 #include "PX_Vector.h"
-#include "PX_Wavelet.h"
 #endif
