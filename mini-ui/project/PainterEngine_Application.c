@@ -9,10 +9,9 @@ PX_Object *menu;
 PX_Object *root, *button;
 
 #include <stdio.h>
-px_void PX_ApplicationOnPushButton(PX_Object *pObject,
-                                   PX_Object_Event e,
-                                   px_void *ptr) {
-    printf("hello world\n");
+px_void MenuCallback(px_void *ptr) { printf("menu callback\n"); }
+px_void ButtonCallback(PX_Object *pObject, PX_Object_Event e, px_void *ptr) {
+    printf("button callback\n");
 }
 
 px_bool PX_ApplicationInitialize(PX_Application *pApp,
@@ -26,7 +25,7 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,
     pItem = PX_Object_MenuAddItem(
         menu, PX_Object_MenuGetRootItem(menu), "File", PX_NULL, PX_NULL);
     pItem2 = PX_Object_MenuAddItem(menu, pItem, "New", PX_NULL, PX_NULL);
-    PX_Object_MenuAddItem(menu, pItem2, "File", PX_NULL, PX_NULL);
+    PX_Object_MenuAddItem(menu, pItem2, "File", MenuCallback, PX_NULL);
     PX_Object_MenuAddItem(menu, pItem2, "Directory", PX_NULL, PX_NULL);
     PX_Object_MenuAddItem(menu, pItem, "New", PX_NULL, PX_NULL);
     PX_Object_MenuAddItem(menu, pItem, "Open", PX_NULL, PX_NULL);
@@ -45,7 +44,7 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,
     button = PX_Object_PushButtonCreate(
         &pApp->runtime.mp_ui, root, 100, 300, 200, 50, "button", PX_NULL);
     PX_ObjectRegisterEvent(
-        button, PX_OBJECT_EVENT_EXECUTE, PX_ApplicationOnPushButton, pApp);
+        button, PX_OBJECT_EVENT_EXECUTE, ButtonCallback, pApp);
 
     return PX_TRUE;
 }
