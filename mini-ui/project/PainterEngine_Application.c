@@ -6,6 +6,13 @@ PX_Application App;
 
 PX_Object *root, *button;
 
+#include <stdio.h>
+px_void PX_ApplicationOnPushButton(PX_Object *pObject,
+                                   PX_Object_Event e,
+                                   px_void *ptr) {
+    printf("hello world\n");
+}
+
 px_bool PX_ApplicationInitialize(PX_Application *pApp,
                                  px_int screen_width,
                                  px_int screen_height) {
@@ -14,6 +21,8 @@ px_bool PX_ApplicationInitialize(PX_Application *pApp,
     root = PX_ObjectCreate(&pApp->runtime.mp_ui, PX_NULL, 0, 0, 0, 0, 0, 0);
     button = PX_Object_PushButtonCreate(
         &pApp->runtime.mp_ui, root, 5, 5, 200, 50, "button", PX_NULL);
+    PX_ObjectRegisterEvent(
+        button, PX_OBJECT_EVENT_EXECUTE, PX_ApplicationOnPushButton, pApp);
 
     return PX_TRUE;
 }
