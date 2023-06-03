@@ -325,4 +325,3 @@ PX_Object *PX_Object_ExecuterCreate(px_memorypool *mp,
 
     return pObject;
 }
-

@@ -606,4 +606,3 @@ px_void PX_Designer_SetEnable(PX_Object *pObject, px_bool v);
 #include "PX_Object_CursorSlider.h"
 
 #endif
-

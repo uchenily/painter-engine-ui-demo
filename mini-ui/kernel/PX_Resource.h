@@ -63,4 +63,3 @@ px_void PX_ResourceLibraryDelete(PX_ResourceLibrary *lib, const px_char key[]);
 px_void PX_ResourceLibraryFree(PX_ResourceLibrary *lib);
 
 #endif
-
