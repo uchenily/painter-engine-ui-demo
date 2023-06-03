@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-for i in ../PainterEngine/core/*.c; do
+for i in core/*.c; do
   echo $i
 done
 
-for i in ../PainterEngine/kernel/*.c; do
+for i in kernel/*.c; do
   echo $i
 done
 
-for i in ../PainterEngine/architecture/*.c; do
+for i in architecture/*.c; do
   echo $i
 done
 
