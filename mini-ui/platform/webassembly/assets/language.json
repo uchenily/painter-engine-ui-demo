@@ -1,0 +1,17 @@
+{
+  "menu": {
+    "file": "File",
+    "open": "Import",
+    "save": "Export",
+    "new connection": "New Connection",
+    "new tcp/ip connection": "New TCP/IP Connection",
+    "new udp connection": "New UDP Connection",
+    "new com connection": "New COM Connection",
+    "about": "About",
+    "about memory debugger": "About Memory Debugger"
+  },
+  "main": {
+    "go": "go",
+    "about": "MemoryDebugger\nCode by DBinary(modified by haichuan 20230603)\nPower By PainterEngine\n"
+  }
+}
