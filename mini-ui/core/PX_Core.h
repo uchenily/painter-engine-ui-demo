@@ -21,6 +21,5 @@
 #include "PX_Quicksort.h"
 #include "PX_String.h"
 #include "PX_Texture.h"
-#include "PX_Tuning.h"
 #include "PX_Vector.h"
 #endif
