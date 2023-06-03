@@ -10,7 +10,6 @@
 
 #ifndef __PX_CORE_H
 #define __PX_CORE_H
-#include "PX_Arle.h"
 #include "PX_Base64.h"
 #include "PX_BaseGeo.h"
 #include "PX_Effect.h"
@@ -26,7 +25,6 @@
 #include "PX_MFCC.h"
 #include "PX_Memory.h"
 #include "PX_Midi.h"
-#include "PX_Packet.h"
 #include "PX_Piano.h"
 #include "PX_Png.h"
 #include "PX_Quadtree.h"
@@ -39,6 +37,5 @@
 #include "PX_Tuning.h"
 #include "PX_Vector.h"
 #include "PX_Wavelet.h"
-#include "PX_WebSocket.h"
 #include "PX_curve25519.h"
 #endif
