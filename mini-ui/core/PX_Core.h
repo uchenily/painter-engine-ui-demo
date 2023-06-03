@@ -33,5 +33,4 @@
 #include "PX_Tuning.h"
 #include "PX_Vector.h"
 #include "PX_Wavelet.h"
-#include "PX_curve25519.h"
 #endif
