@@ -22,7 +22,6 @@
 #include "PX_Keyboard.h"
 #include "PX_Linker.h"
 #include "PX_List.h"
-#include "PX_MFCC.h"
 #include "PX_Memory.h"
 #include "PX_Midi.h"
 #include "PX_Png.h"
