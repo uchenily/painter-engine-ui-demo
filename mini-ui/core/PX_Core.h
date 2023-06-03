@@ -15,7 +15,6 @@
 #include "PX_Font.h"
 #include "PX_Hashmap.h"
 #include "PX_Huffman.h"
-#include "PX_KarplusStrong.h"
 #include "PX_Keyboard.h"
 #include "PX_Linker.h"
 #include "PX_List.h"
