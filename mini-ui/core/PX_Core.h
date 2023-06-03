@@ -25,7 +25,6 @@
 #include "PX_MFCC.h"
 #include "PX_Memory.h"
 #include "PX_Midi.h"
-#include "PX_Piano.h"
 #include "PX_Png.h"
 #include "PX_Quadtree.h"
 #include "PX_Quicksort.h"
