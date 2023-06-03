@@ -16,8 +16,6 @@
 #include "PX_Font.h"
 #include "PX_Hashmap.h"
 #include "PX_Huffman.h"
-#include "PX_ImageFilter.h"
-#include "PX_KalmanFilter.h"
 #include "PX_KarplusStrong.h"
 #include "PX_Keyboard.h"
 #include "PX_Linker.h"
